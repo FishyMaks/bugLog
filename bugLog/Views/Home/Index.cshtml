@@ -1,8 +1,26 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@section login{
+    <form action="">
+        <div class="d-flex flex-row justify-content-end p-3">
+            <a href="/Bugs/Index" type="submit" class="btn btn-dark mr-2">Sign In</a>
+            <a href="/Registration" type="submit" class="btn btn-dark">Register</a>
+        </div>
+    </form>
+}
+<style type="text/css">
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        max-width: 600px;
+        max-height: auto;
+    }
+</style>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+
+<img src="~/images/Logo.png">
