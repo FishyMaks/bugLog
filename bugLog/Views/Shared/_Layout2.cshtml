@@ -10,14 +10,38 @@
 
     </script>
     <style>
-        aside {
-            width: 50px;
-            height: 500px;
-            padding: 20px;
+        * {
+            box-sizing: border-box;
+        }
+
+        .menu {
             float: left;
-            font-style: italic;
-            background-color: #00CED1;
-            border-radius: 25px;
+            width: 20%;
+            text-align: center;
+        }
+
+            .menu a {
+                background-color: #e5e5e5;
+                padding: 8px;
+                margin-top: 7px;
+                display: block;
+                width: 100%;
+                color: black;
+            }
+
+        .main {
+            float: left;
+            width: 60%;
+            padding: 0 20px;
+        }
+
+        .right {
+            background-color: #e5e5e5;
+            float: left;
+            width: 20%;
+            padding: 15px;
+            margin-top: 7px;
+            text-align: center;
         }
     </style>
 </head>
@@ -45,24 +69,36 @@
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
-            <div class="col-12" style="height: 200px">
-                <aside>
-                    d
-                </aside>
+        <div style="padding-top:15%"></div>
+        <div class="row;" style="background-color:#e5e5e5; padding:15px; text-align:center;">
+            <div class="column" style="padding-right:15px"><img style="width:100%; max-width:200px; height:auto" src="~/images/Logo2.1.png"></div>
+            <div class="column"><h1>Percentage</h1></div>
+        </div>
+        <div style="overflow:auto">
+            <div class="menu">
+                <a href="#">Report a bug</a>
+                <a href="#">Bugs</a>
+                <a href="#">Team</a>
+                <a href="#">Logout</a>
             </div>
-            @RenderBody()
-        </main>
+            <main role="main" class="pb-3 main">
+                <div style="padding-top:15%"></div>
+                @RenderBody()
+            </main>
+        </div>
+        <div class="right">
+            <p>You are logged in as Maksim.</p>
+        </div>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - bugLog - <a asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2021 - bugLog - <a asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
