@@ -2,46 +2,44 @@
     Layout = null;
 }
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-<body>
-    <div class="container-fluid">
-        <div class="d-flex h-100 align-items-center">
-            <div class="col-6 p-0 bg-white d-flex flex-column">
-                <div class="d-flex align-items-center h-100 p-5 text-left justify-content-center">
-                    <form action="">
-                        <div class="form-group">
-                            <label for="user">Username:</label>
-                            <input type="text" class="form-control" id="user" placeholder="enter username" />
-                        </div>
-                        <div class="form-group">
-                            <label for="pass">Password:</label>
-                            <input type="password" class="form-control" id="pass" placeholder="enter password" />
-                        </div>
-                        <div class="form-group">
-                            <label for="registration code">User Registration Code:</label>
-                            <input type="text" class="form-control" id="registration code" placeholder="enter registration code" />
-                        </div>
-                        <div class="form-group">
-                            <label for="invite code">Company Invite Code:</label>
-                            <input type="text" class="form-control" id="invite code" placeholder="enter invite code" />
-                        </div>
-                        <div class="flex-row text-center">
-                            <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-dark">Cancel</a>
-                            <a asp-area="" asp-controller="Home" asp-action="SignIn" class="btn btn-dark">Submit</a>
-                        </div>
-                    </form>
-                </div>
+<div class="container-fluid">
+    <div class="d-flex h-100 align-items-center">
+        <div class="col-6 p-0 bg-white d-flex flex-column">
+            <div class="d-flex align-items-center h-100 p-5 text-left justify-content-center">
+                <form action="">
+                    <div class="form-group">
+                        <label for="user">Username:</label>
+                        <input type="text" class="form-control" id="user" placeholder="enter username" />
+                    </div>
+                    <div class="form-group">
+                        <label for="pass">Password:</label>
+                        <input type="password" class="form-control" id="pass" placeholder="enter password" />
+                    </div>
+                    <div class="form-group">
+                        <label for="registration code">User Registration Code:</label>
+                        <input type="text" class="form-control" id="registration code" placeholder="enter registration code" />
+                    </div>
+                    <div class="form-group">
+                        <label for="invite code">Company Invite Code:</label>
+                        <input type="text" class="form-control" id="invite code" placeholder="enter invite code" />
+                    </div>
+                    <div class="flex-row text-center">
+                        <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-dark">Cancel</a>
+                        <a asp-area="" asp-controller="Home" asp-action="SignIn" class="btn btn-dark">Submit</a>
+                    </div>
+                </form>
             </div>
-            <img class="float-left p-1" style="position:absolute; top:8px; width: 400px;" src="~/images/Logo2.png">
-            <div class="col-6 p-0 h-100" style="background:#00CED1">
-                <div class="d-flex flex-column justify-content-center h-100 p-5 justify-content-center">
-                    <div class="d-flex justify-content-start text-capitalize text-black-50" style="font-size:24px">
-                        Keep your friends close
-                    </div>
-                    <div class="d-flex justify-content-end text-capitalize text-black-50 font-weight-bold" style="font-size:16px">
-                        ...and your bugs closer
-                    </div>
+        </div>
+        <img class="float-left p-1" style="position:absolute; top:8px; width: 400px;" src="~/images/Logo2.png">
+        <div class="col-6 p-0 h-100" style="background:#00CED1">
+            <div class="d-flex flex-column justify-content-center h-100 p-5 justify-content-center">
+                <div class="d-flex justify-content-start text-capitalize text-black-50" style="font-size:24px">
+                    Keep your friends close
+                </div>
+                <div class="d-flex justify-content-end text-capitalize text-black-50 font-weight-bold" style="font-size:16px">
+                    ...and your bugs closer
                 </div>
             </div>
         </div>
     </div>
-</body>
+</div>

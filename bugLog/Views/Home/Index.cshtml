@@ -27,7 +27,9 @@
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-dark">Sign</button>
+                            <button type="submit" class="btn btn-dark">
+                                <a asp-controller="Home" asp-action="SignIn" class="text-white">Sign</a>
+                            </button>
                             <button type="button" id="btnHideModal" class="btn btn-dark">
                                 Hide
                             </button>
@@ -36,7 +38,7 @@
                 </div>
             </div>
         </div>
-        <a asp-area="" asp-controller="Home" asp-action="Registration" class="btn btn-dark">Register</a>
+        <a asp-controller="Home" asp-action="Registration" class="btn btn-dark">Register</a>
     </div>
     <script type="text/javascript">
 

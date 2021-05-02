@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using bugLog.Models;
+using System.Collections.Generic;
 
 namespace bugLog.Repositories
 {
