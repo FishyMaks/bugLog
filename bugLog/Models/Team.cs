@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace bugLog.Models
 {
-    public partial class Team
+    public partial class Team : BaseEntity
     {
         public Team()
         {

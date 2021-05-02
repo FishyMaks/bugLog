@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace bugLog.Models
 {
-    public partial class UserAccess
+    public partial class UserAccess : BaseEntity
     {
         public UserAccess()
         {

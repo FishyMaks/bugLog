@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace bugLog.Models
 {
-    public partial class UserProfile
+    public partial class UserProfile : BaseEntity
     {
         public UserProfile()
         {
