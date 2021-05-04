@@ -13,7 +13,9 @@ namespace bugLog.Migrations
                 {
                     TeamId = table.Column<int>(type: "int", nullable: false),
                     TeamName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    TeamMotto = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true)
+                    TeamMotto = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -27,7 +29,9 @@ namespace bugLog.Migrations
                     TeamId = table.Column<int>(type: "int", nullable: false),
                     UniqueKey = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     FromDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ToDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    ToDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -44,7 +48,9 @@ namespace bugLog.Migrations
                     UserPassword = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     DisplayName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     EmailAddress = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    AllowEmailNotification = table.Column<bool>(type: "bit", nullable: false)
+                    AllowEmailNotification = table.Column<bool>(type: "bit", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -79,7 +85,9 @@ namespace bugLog.Migrations
                     BugCreatedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
                     BugClosedBy = table.Column<int>(type: "int", nullable: true),
                     BugClosedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    BugResolutionSummary = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    BugResolutionSummary = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {

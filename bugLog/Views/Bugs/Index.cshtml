@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Index";
+    Layout = "_Layout2";
 }
 
 <h1>Bugs</h1>
@@ -13,40 +14,22 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.AssignedToTeamId)
+                SUBJECT
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BugReportedBy)
+                REPORTER
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BugTitle)
+                DATE OPENED
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BugDescription)
+               ASSIGNED
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BugStatus)
+                STATUS
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BugSeverity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BugCreatedOn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BugClosedOn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BugResolutionSummary)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BugAssignedToNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BugClosedByNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BugCreatedByNavigation)
+                SEVERITY
             </th>
             <th></th>
         </tr>
@@ -55,40 +38,22 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.AssignedToTeamId)
+                @Html.DisplayFor(modelItem => item.BugTitle)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.BugReportedBy)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.BugTitle)
+                @Html.DisplayFor(modelItem => item.BugCreatedOn)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.BugDescription)
+                 @Html.DisplayFor(modelItem => item.BugAssignedToNavigation.DisplayName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.BugStatus)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.BugSeverity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BugCreatedOn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BugClosedOn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BugResolutionSummary)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BugAssignedToNavigation.DisplayName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BugClosedByNavigation.DisplayName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BugCreatedByNavigation.DisplayName)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.BugId">Edit</a> |

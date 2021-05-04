@@ -28,7 +28,7 @@ namespace bugLog
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, BugDbContext context)
         {
             if (env.IsDevelopment())
             {
@@ -53,6 +53,7 @@ namespace bugLog
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+            SeedData.SeedDatabase(context);
         }
     }
 }
