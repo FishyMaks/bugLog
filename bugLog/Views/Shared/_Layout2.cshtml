@@ -89,10 +89,10 @@
     </header>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
+        <a asp-controller="Controllers.UserProfiles" asp-action="Index">Profile</a>
+        <a asp-controller="Bugs" asp-action="Index">Bugs</a>
+        <a asp-controller="Teams" asp-action="Index">Team</a>
+        <a asp-controller="Home" asp-action="Index">Logout</a>
     </div>
     <button onclick="openNav()" class="btn btn-dark;" style="margin-left:15px; margin-top: 15px">Menu</button>
     <div id="main">
@@ -100,13 +100,7 @@
             <div class="column" style="padding-right:15px"><img style="width:100%; max-width:200px; height:auto"></div>
             <div class="column"><h1>Percentage</h1></div>
         </div>
-        <div style="overflow:visible">
-            <div class="menu" style="background:#00CED1">
-                <a href="#">Report a bug</a>
-                <a asp-controller="Bugs" asp-action="Index">Bugs</a>
-                <a asp-controller="Teams" asp-action="Index">Team</a>
-                <a asp-controller="Home" asp-action="Index">Logout</a>
-            </div>
+        <div style="overflow:visible;">
             <main role="main" class="pb-3 main">
                 @RenderBody()
             </main>
