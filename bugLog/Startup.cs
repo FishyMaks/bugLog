@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using BikeRentalApi.Models.Repositories;
+using Microsoft.AspNetCore.Identity;
 
 namespace bugLog
 {
@@ -24,7 +25,19 @@ namespace bugLog
         {
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddControllersWithViews();
-            services.AddDbContext<BugDbContext>(opts => { opts.UseSqlServer(Configuration["ConnectionStrings:bugLogConnection"]); });
+            services.AddDbContext<BugDbContext>(opts => opts.UseSqlServer(Configuration["ConnectionStrings:bugLogConnection"]));
+            services.AddDbContext<IdentityContext>(opts => opts.UseSqlServer(Configuration["ConnectionStrings:IdentityConnection"]));
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<IdentityContext>();
+            services.Configure<IdentityOptions>(opts =>
+            {
+                opts.Password.RequiredLength = 8;
+                opts.Password.RequireNonAlphanumeric = false;
+                opts.Password.RequireUppercase = false;
+                opts.Password.RequireLowercase = false;
+                opts.Password.RequireDigit = false;
+                opts.User.RequireUniqueEmail = true;
+                opts.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

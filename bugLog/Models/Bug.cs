@@ -22,7 +22,9 @@ namespace bugLog.Models
         public string BugResolutionSummary { get; set; }
 
         public virtual UserProfile BugAssignedToNavigation { get; set; }
-        public virtual UserProfile BugClosedByNavigation { get; set; }
+#nullable enable
+        public virtual UserProfile? BugClosedByNavigation { get; set; }
+#nullable disable
         public virtual UserProfile BugCreatedByNavigation { get; set; }
     }
 }
