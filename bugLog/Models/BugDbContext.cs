@@ -109,6 +109,9 @@ namespace bugLog.Models
                     .IsRequired()
                     .HasMaxLength(50);
 
+                entity.Property(e => e.IsActive)
+                    .IsRequired();
+
                 entity.HasOne(d => d.Team)
                     .WithMany(p => p.UserProfiles)
                     .HasForeignKey(d => d.TeamId)

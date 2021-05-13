@@ -27,6 +27,7 @@ namespace bugLog.Models
         public string DisplayName { get; set; }
         public string EmailAddress { get; set; }
         public bool AllowEmailNotification { get; set; }
+        public bool IsActive { get; set; }
 
         public virtual Team Team { get; set; }
         public virtual UserAccess TeamNavigation { get; set; }

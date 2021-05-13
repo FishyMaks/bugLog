@@ -15,7 +15,7 @@ namespace bugLog.Models
             {
 
                 context.UserProfiles.AddRange(
-                    new UserProfile 
+                    new UserProfile
                     {
                         UserId = 1,
                         TeamId = 1,
@@ -23,9 +23,10 @@ namespace bugLog.Models
                         UserPassword = "password",
                         DisplayName = "Coolest Admin",
                         EmailAddress = "admin@buglog.com",
-                        AllowEmailNotification = true
+                        AllowEmailNotification = true,
+                        IsActive = false
                     },
-                    new UserProfile 
+                    new UserProfile
                     {
                         UserId = 2,
                         TeamId = 1,
@@ -33,7 +34,8 @@ namespace bugLog.Models
                         UserPassword = "password",
                         DisplayName = "User 2",
                         EmailAddress = "user2@buglog.com",
-                        AllowEmailNotification = true
+                        AllowEmailNotification = true,
+                        IsActive = false
                     },
                     new UserProfile
                     {
@@ -43,9 +45,10 @@ namespace bugLog.Models
                         UserPassword = "password",
                         DisplayName = "User 3",
                         EmailAddress = "user3@buglog.com",
-                        AllowEmailNotification = true
+                        AllowEmailNotification = true,
+                        IsActive = false
                     }
-                    );
+                    ); ;
                 context.UserAccesses.AddRange(
                     new UserAccess
                     {

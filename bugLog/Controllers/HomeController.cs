@@ -22,6 +22,18 @@ namespace bugLog.Controllers
         {
             return View();
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Index(UserProfile user)
+        {
+            if (ModelState.IsValid)
+            {
+                using(BugDbContext db = new())
+                {
+
+                }
+            }
+        }
 
         public IActionResult Privacy()
         {
