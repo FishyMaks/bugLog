@@ -1,4 +1,5 @@
 ﻿@inject SignInManager<IdentityUser> signInManager;
+@model LoginViewModel
 
 @{
     ViewData["Title"] = "Home Page";
@@ -19,35 +20,47 @@
                 <button id="btnShowModal" type="button" class="btn btn-dark mr-2">Sign In</button>
                 <div class="modal fade" tabindex="-1" id="loginModal"
                      data-keyboard="false" data-backdrop="static">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">
-                                    ×
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form>
+                    <form method="post">
+
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">
+                                        ×
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div asp-validation-summary="All" class="text-danger"></div>
                                     <div class="form-group">
-                                        <input class="form-control" type="text"
-                                               placeholder="Login Username" id="inputUserName" />
+                                        <label asp-for="Email"></label>
+                                        <input asp-for="Email" class="form-control" />
+                                        <span asp-validation-for="Email" class="text-danger"></span>
                                     </div>
                                     <div class="form-group">
-                                        <input class="form-control" placeholder="Login Password"
-                                               type="password" id="inputPassword" />
+                                        <label asp-for="Password"></label>
+                                        <input asp-for="Password" class="form-control" />
+                                        <span asp-validation-for="Password" class="text-danger"></span>
                                     </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <a type="button" class="btn btn-dark" asp-controller="Home" asp-action="SignIn">
-                                    Sign
-                                </a>
-                                <button type="button" id="btnHideModal" class="btn btn-dark">
-                                    Hide
-                                </button>
+                                    <div class="form-group">
+                                        <div class="custom-checkbox">
+                                            <label asp-for="RememberMe">
+                                                <input asp-for="RememberMe" />
+                                                @Html.DisplayNameFor(m => m.RememberMe)
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-dark" asp-controller="Home" asp-action="Index">
+                                        Login
+                                    </button>
+                                    <button type="button" id="btnHideModal" class="btn btn-dark">
+                                        Hide
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
             <a asp-controller="Home" asp-action="Registration" class="btn btn-dark">Register</a>

@@ -24,10 +24,26 @@ namespace bugLog.Controllers
             this._logger = logger;
 
         }
-
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Index(LoginViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await signInManager.PasswordSignInAsync(model.Email, model.Password,
+                                         model.RememberMe, false);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("index", "bugs");
+                }
+
+                ModelState.AddModelError(string.Empty, "Invalid Login Attempt");
+            }
+            return View(model);
         }
         //[HttpPost]
         //[ValidateAntiForgeryToken]
@@ -46,11 +62,7 @@ namespace bugLog.Controllers
         {
             return View();
         }
-
-        public IActionResult SignIn()
-        {
-            return RedirectToAction("index","bugs");
-        }
+       
         [HttpGet]
         public IActionResult Registration()
         {

@@ -1,4 +1,5 @@
 ﻿@inject SignInManager<IdentityUser> signInManager;
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,9 +96,9 @@
         <a asp-controller="Bugs" asp-action="Index">Bugs</a>
         <a asp-controller="Teams" asp-action="Index">Team</a>
     </div>
-    <div class="navbar-nav">
+    <div class="navbar navbar-expand-sm bg-dark text-light">
         <ul class="navbar-nav">
-            <li class="nav-item btn nav-link" onclick="openNav()">
+            <li class="nav-item nav-link" style="cursor:pointer" onclick="openNav()">
                 Menu
             </li>
         </ul>
@@ -114,43 +115,41 @@
             }
             else
             {
-                <li class="nav-item">
-
-                </li>
+                <li>NotLoggedIn</li>
             }
-        </ul>
-    </div>
-    <div id="main">
-        <div class="row;" style="padding:15px; text-align:center;">
-            <div class="column" style="padding-right:15px"><img style="width:100%; max-width:200px; height:auto"></div>
-            <div class="column"><h1>Percentage</h1></div>
+            </ul>
         </div>
-        <div style="overflow:visible;">
-            <main role="main" class="pb-3 main">
-                @RenderBody()
-            </main>
+        <div id="main">
+            <div class="row;" style="padding:15px; text-align:center;">
+                <div class="column" style="padding-right:15px"><img style="width:100%; max-width:200px; height:auto"></div>
+                <div class="column"><h1>Percentage</h1></div>
+            </div>
+            <div style="overflow:visible;">
+                <main role="main" class="pb-3 main">
+                    @RenderBody()
+                </main>
+            </div>
         </div>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - bugLog - <a asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
-        }
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2021 - bugLog - <a asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+            }
 
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-        }
-    </script>
-    @await RenderSectionAsync("Scripts", required: false)
-</body>
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+            }
+        </script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>
 </html>
