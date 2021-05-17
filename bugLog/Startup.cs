@@ -28,16 +28,16 @@ namespace bugLog
             services.AddDbContext<BugDbContext>(opts => opts.UseSqlServer(Configuration["ConnectionStrings:bugLogConnection"]));
             services.AddDbContext<IdentityContext>(opts => opts.UseSqlServer(Configuration["ConnectionStrings:IdentityConnection"]));
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<IdentityContext>();
-            services.Configure<IdentityOptions>(opts =>
-            {
-                opts.Password.RequiredLength = 8;
-                opts.Password.RequireNonAlphanumeric = false;
-                opts.Password.RequireUppercase = false;
-                opts.Password.RequireLowercase = false;
-                opts.Password.RequireDigit = false;
-                opts.User.RequireUniqueEmail = true;
-                opts.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
-            });
+            //services.Configure<IdentityOptions>(opts =>
+            //{
+            //    opts.Password.RequiredLength = 8;
+            //    opts.Password.RequireNonAlphanumeric = true;
+            //    opts.Password.RequireUppercase = true;
+            //    opts.Password.RequireLowercase = true;
+            //    opts.Password.RequireDigit = true;
+            //    opts.User.RequireUniqueEmail = true;
+            //    opts.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz@";
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,9 +55,8 @@ namespace bugLog
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

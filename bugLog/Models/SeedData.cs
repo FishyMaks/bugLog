@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-
 using Microsoft.EntityFrameworkCore;
 
 namespace bugLog.Models
@@ -24,7 +23,6 @@ namespace bugLog.Models
                         DisplayName = "Coolest Admin",
                         EmailAddress = "admin@buglog.com",
                         AllowEmailNotification = true,
-                        IsActive = false
                     },
                     new UserProfile
                     {
@@ -35,7 +33,6 @@ namespace bugLog.Models
                         DisplayName = "User 2",
                         EmailAddress = "user2@buglog.com",
                         AllowEmailNotification = true,
-                        IsActive = false
                     },
                     new UserProfile
                     {
@@ -46,7 +43,6 @@ namespace bugLog.Models
                         DisplayName = "User 3",
                         EmailAddress = "user3@buglog.com",
                         AllowEmailNotification = true,
-                        IsActive = false
                     }
                     ); ;
                 context.UserAccesses.AddRange(

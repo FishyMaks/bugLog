@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace bugLog.Models
 {
@@ -108,9 +103,6 @@ namespace bugLog.Models
                 entity.Property(e => e.UserPassword)
                     .IsRequired()
                     .HasMaxLength(50);
-
-                entity.Property(e => e.IsActive)
-                    .IsRequired();
 
                 entity.HasOne(d => d.Team)
                     .WithMany(p => p.UserProfiles)

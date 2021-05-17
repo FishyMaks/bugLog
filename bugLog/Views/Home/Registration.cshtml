@@ -1,4 +1,5 @@
-﻿@{
+﻿@model RegisterViewModel
+@{
     Layout = null;
 }
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -6,31 +7,31 @@
     <div class="d-flex h-100 align-items-center">
         <div class="col-6 p-0 bg-white d-flex flex-column">
             <div class="d-flex align-items-center h-100 p-5 text-left justify-content-center">
-                <form action="">
+                <form method="post">
+                    <div asp-validation-summary="All" class="text-danger"></div>
                     <div class="form-group">
-                        <label for="user">Username:</label>
-                        <input type="text" class="form-control" id="user" placeholder="enter username" />
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label for="pass">Password:</label>
-                        <input type="password" class="form-control" id="pass" placeholder="enter password" />
+                        <label asp-for="Password"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
                     </div>
                     <div class="form-group">
-                        <label for="registration code">User Registration Code:</label>
-                        <input type="text" class="form-control" id="registration code" placeholder="enter registration code" />
-                    </div>
-                    <div class="form-group">
-                        <label for="invite code">Company Invite Code:</label>
-                        <input type="text" class="form-control" id="invite code" placeholder="enter invite code" />
+                        <label asp-for="ConfirmPassword"></label>
+                        <input asp-for="ConfirmPassword" class="form-control" />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                     </div>
                     <div class="flex-row text-center">
                         <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-dark">Cancel</a>
-                        <a asp-area="" asp-controller="Home" asp-action="SignIn" class="btn btn-dark">Submit</a>
+                        <button type="submit" class="btn btn-dark">Register</button>
                     </div>
                 </form>
             </div>
         </div>
-        <img class="float-left p-1" style="position:absolute; top:8px; width: 400px;" src="~/images/Logo2.png">
+        <img class="float-left p-1" style="position:absolute; top:8px; width: 400px; pointer-events:none" src="~/images/Logo2.png">
         <div class="col-6 p-0 h-100" style="background:#00CED1">
             <div class="d-flex flex-column justify-content-center h-100 p-5 justify-content-center">
                 <div class="d-flex justify-content-start text-capitalize text-black-50" style="font-size:24px">
