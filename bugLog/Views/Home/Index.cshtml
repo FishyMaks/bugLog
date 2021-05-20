@@ -21,7 +21,6 @@
                 <div class="modal fade" tabindex="-1" id="loginModal"
                      data-keyboard="false" data-backdrop="static">
                     <form method="post">
-
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -51,7 +50,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn btn-dark" asp-controller="Home" asp-action="Index">
+                                    <button type="submit" id="btnSubmitModal" class="btn btn-dark" asp-controller="Home" asp-action="Index">
                                         Login
                                     </button>
                                     <button type="button" id="btnHideModal" class="btn btn-dark">
@@ -77,6 +76,11 @@
                 $("#loginModal").modal('hide');
             });
 
+            $("#btnSubmitModal").click(function () {
+                $.ajax({
+
+                });
+            });
         });
     </script>
 }
